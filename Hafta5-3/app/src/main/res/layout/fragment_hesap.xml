@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HesapFragment">
+
+    <TextView
+        android:id="@+id/txt_hesapsahibi"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginBottom="35dp"
+        android:gravity="center"
+        android:hint="Hesap Sahibi"
+        app:layout_constraintBottom_toTopOf="@+id/txt_hesaptürü"
+        app:layout_constraintEnd_toEndOf="@+id/txt_hesaptürü"
+        app:layout_constraintStart_toStartOf="@+id/txt_hesaptürü"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_hesaptürü"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="35dp"
+        android:gravity="center"
+        android:hint="Hesap Türü"
+        app:layout_constraintBottom_toTopOf="@+id/txt_bakiye"
+        app:layout_constraintEnd_toEndOf="@+id/txt_bakiye"
+        app:layout_constraintStart_toStartOf="@+id/txt_bakiye"
+        app:layout_constraintTop_toBottomOf="@+id/txt_hesapsahibi" />
+
+    <TextView
+        android:id="@+id/txt_bakiye"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="302dp"
+        android:gravity="center"
+        android:hint="Hesap Bakiyesi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_hesaptürü" />
+</androidx.constraintlayout.widget.ConstraintLayout>
