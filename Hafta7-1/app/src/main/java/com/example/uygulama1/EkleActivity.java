@@ -14,10 +14,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class EkleActivity extends AppCompatActivity {
 
     TextView txt_adsoyad_ekle, txt_mail_ekle,txt_telefon_ekle;
     Button btn_ekle;
+
+    ArrayList<Müşteri> müşteriler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,9 @@ public class EkleActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        müşteriler= (ArrayList<Müşteri>) getIntent().getSerializableExtra("müşteriler");
+
 
         txt_adsoyad_ekle=findViewById(R.id.txt_adsoyad_ekle);
         txt_mail_ekle=findViewById(R.id.txt_mail_ekle);
@@ -54,7 +61,8 @@ public class EkleActivity extends AppCompatActivity {
                             txt_telefon_ekle.getText().toString());
                     Intent listele_intent=new Intent(EkleActivity.this, ListeleActivity.class);
                     listele_intent.putExtra("id",1);
-                    listele_intent.putExtra("yenimüşteri",yenimüşteri);
+                    müşteriler.add(yenimüşteri);
+                    listele_intent.putExtra("yenimüşteriler",müşteriler);
                     startActivity(listele_intent);
                 }
             }
